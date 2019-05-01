@@ -10,6 +10,32 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be0084506e4ec919aa1c114638878db11b/Documentation/kube-flannel.yml --validate=false
 
+#### this will allow your master to schedule pods
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
 kubectl get nodes
+
+mkdir kube-example && cd kube-example
+git clone https://github.com/kapilsthakkar25/kubernetes-demo
+cd kubernetes-demo
+
+sh kube-dashboard/deploy.sh
+
+### download the kubectl client on your local laptop/system from below url:
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+### copy admin.conf file to your system
+#### Run from master:
+cp /etc/kubernetes/admin.conf /tmp/config
+chown student /tmp/config
+
+#### Run from your local system:
+mkdir .kube
+scp student@172.30.3.x:/tmp/config .kube/config
+
+#### check from your local system
+kubectl get nodes
+
+#### run from your laptop
+kubectl proxy
+
