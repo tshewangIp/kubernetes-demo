@@ -19,7 +19,7 @@ mkdir kube-example && cd kube-example
 git clone https://github.com/kapilsthakkar25/kubernetes-demo
 cd kubernetes-demo
 
-sh kube-dashboard/deploy.sh
+sh ./kube-dashboard/deploy.sh
 
 ### download the kubectl client on your local laptop/system from below url:
 https://kubernetes.io/docs/tasks/tools/install-kubectl/
