@@ -39,3 +39,7 @@ kubectl get nodes
 #### run from your laptop
 kubectl proxy
 
+### reference links:
+https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/
+https://kubernetes.io/docs/setup/independent/install-kubeadm/
+
